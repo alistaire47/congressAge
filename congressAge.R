@@ -29,7 +29,7 @@ jitter <- qplot(gender, age, data=drdata, geom='jitter', color=party,
     scale_color_manual(values=cols) +
     guides(fill=FALSE, color=FALSE) +
     theme(legend.justification=c(1,1), legend.position=c(1,.8),
-         plot.title=element_text(vjust=-43, hjust=0, size=10, color='gray40')) +
+         plot.title=element_text(vjust=-54.5, hjust=0, size=10, color='gray40')) +
     facet_grid(type ~ party, scales='free_x')
 
 ## Plotting histograms
@@ -39,7 +39,7 @@ hist1 <- qplot(age, data=drdata, geom='histogram', binwidth=10, fill=party,
     scale_color_manual(values=accents) +
     guides(fill=FALSE, color=FALSE) +
     theme(legend.justification=c(1,1), legend.position=c(1,.8),
-         plot.title=element_text(vjust=-43, hjust=0, size=10, color='gray40')) +
+         plot.title=element_text(vjust=-54.5, hjust=0, size=10, color='gray40')) +
     facet_grid(type ~ party, space='free', scales='free_y')
 
 hist2 <- qplot(age, data=drdata, geom='bar', binwidth=5, fill=party, 
@@ -52,5 +52,5 @@ hist2 <- qplot(age, data=drdata, geom='bar', binwidth=5, fill=party,
     facet_grid(type ~ ., space='free', scales='free_y')
 
 ggsave(filename='congressAge.png', plot=hist2, 
-       width=5, height=5, units='in', dpi=120)
+       width=6, height=6, units='in', dpi=100)
 
