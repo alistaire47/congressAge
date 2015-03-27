@@ -11,8 +11,7 @@ data <- read.csv('legislators-current.csv')
 ## Calculating and adding age column from birthday
 age <- c()
 for (i in 1:nrow(data)) {
-    age <- c(age, as.integer(substr(as.period(
-                  interval(data$birthday[i], now())), 1, 2)))
+    age <- c(age, as.period(interval(data$birthday[i], now()))$year)
 }
 data <- cbind(data, age)
 

@@ -94,8 +94,7 @@ data &lt;- read.csv('legislators-current.csv')
 ## Calculating and adding age column from birthday
 age &lt;- c()
 for (i in 1:nrow(data)) {
-    age &lt;- c(age, as.integer(substr(as.period(
-                  interval(data$birthday[i], now())), 1, 2)))
+    age &lt;- c(age, as.period(interval(data$birthday[i], now()))$year)
 }
 data &lt;- cbind(data, age)
 
